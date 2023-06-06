@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
 
-Widget MiddleOrderView(){
+Widget LampMiddleView(){
 
   return Padding(
     padding: const EdgeInsets.all(16.0),
@@ -38,7 +38,7 @@ Widget MiddleOrderView(){
   );
 }
 
-Widget LowerOrderView(var size,String heading,String subtext, String icon,String stime,String etime){
+Widget LampLowerView(var size,String heading,String subtext, String icon,String stime,String etime){
 
   return Container(
     width: size.width,

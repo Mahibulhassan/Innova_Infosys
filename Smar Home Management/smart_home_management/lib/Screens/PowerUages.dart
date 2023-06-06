@@ -1,6 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_home_management/uility/BaseApp.dart';
+import 'package:smart_home_management/widgets/PowerUagesPage/allWidgets.dart';
 import '../model/graphdata.dart';
 import '../uility/AppColors.dart';
 
@@ -80,7 +81,7 @@ class _PowerUagesState extends State<PowerUages> {
               alignment: Alignment.bottomCenter,
               child: Container(
                 width: size.width,
-                height: size.height / 2.4,
+                height: size.height / 2.19,
                 decoration: BoxDecoration(
                     color: AppColors.main_colour
                 ),
@@ -90,11 +91,47 @@ class _PowerUagesState extends State<PowerUages> {
               alignment: Alignment.bottomCenter,
               child: Container(
                 width: size.width,
-                height: size.height / 2.4,
+                height: size.height / 2.19,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(50)),
+                ),
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                showText("Total Today", 20, Colors.black),
+                                Container(
+                                  margin: EdgeInsets.only(left: 10),
+                                  height: 30,
+                                  width: 30,
+                                  decoration:BoxDecoration(
+                                    color: AppColors.main_colour,
+                                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                                  ),
+                                  child: Center(child: showText("4", 20, Colors.white)),
+                                )
+                              ],
+                            ),
+                            showText("See All", 18, AppColors.main_colour),
+                          ],
+                        ),
+                        SizedBox(height: 5,),
+                        PowerUseLowerView(size, "LAMP", "kitchen - Beadroom","8 Unit | 8 Jan", "1000 kh/h","-11.2 %",Icons.lightbulb,Colors.red),
+                        SizedBox(height: 5,),
+                        PowerUseLowerView(size, "Air Condition", "kitchen - living Room","8 Unit | 12 Jan", "1000 kh/h","-10.2 %",Icons.air_rounded,Colors.green),
+                        SizedBox(height: 5,),
+                        PowerUseLowerView(size, "Wireless Spiker", "living Room","2 Unit | 3 Jan", "1090 kh/h","-10.2 %",Icons.surround_sound,Colors.green),
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ),

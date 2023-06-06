@@ -110,7 +110,7 @@ class _LampPageState extends State<LampPage> {
                                 ],
                               ),
                               Divider(color: Colors.white,),
-                              MiddleOrderView(),
+                              LampMiddleView(),
 
                             ],
                           ),
@@ -149,9 +149,12 @@ class _LampPageState extends State<LampPage> {
                                     showText("Schdule", 20, Colors.black),
                                     SizedBox(width: 5,),
                                     Container(
-                                      height: 20,
-                                      width: 20,
-                                      color: AppColors.main_colour,
+                                      height: 30,
+                                      width: 30,
+                                     decoration: BoxDecoration(
+                                       color: AppColors.main_colour,
+                                       borderRadius: BorderRadius.all(Radius.circular(10)),
+                                     ),
                                       child: Center(child:showText("3", 20, Colors.white)),
                                     )
                                   ],
@@ -168,9 +171,9 @@ class _LampPageState extends State<LampPage> {
                               ],
                             ),
                             SizedBox(height: 5,),
-                            LowerOrderView(size, "Smart Lamp", "Dining Room || Tue Thu", "assets/switch.png", "8 PM", "8 AM"),
+                            LampLowerView(size, "Smart Lamp", "Dining Room || Tue Thu", "assets/switch.png", "8 PM", "8 AM"),
                             SizedBox(height: 5,),
-                            LowerOrderView(size, "Smart Lamp", "Dining Room || Tue Thu", "assets/switch.png", "8 PM", "8 AM"),
+                            LampLowerView(size, "Smart Lamp", "Dining Room || Tue Thu", "assets/switch.png", "8 PM", "8 AM"),
                           ],
                         ),
                       ),

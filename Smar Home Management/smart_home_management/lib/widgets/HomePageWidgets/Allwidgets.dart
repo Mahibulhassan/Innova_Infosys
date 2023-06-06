@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../uility/AppColors.dart';
 
-Widget TopOrderView(var icon ,String data, String name){
+Widget HomeTopView(var icon ,String data, String name){
   return Container(
     height: 70,
     width: 110,
@@ -38,7 +38,7 @@ Widget TopOrderView(var icon ,String data, String name){
 }
 
 
-Widget MiddleOrderView(var size ,String tempar,String name,String device,String image ){
+Widget HomeMiddleView(var size ,String tempar,String name,String device,String image ){
 
   return Container(
     height: size.height*0.23,
@@ -76,7 +76,7 @@ Widget MiddleOrderView(var size ,String tempar,String name,String device,String 
 }
 
 
-Widget LowerOrderView(var size,String name,String subname,String lname,String lsubname,String image){
+Widget HomeLowerView(var size,String name,String subname,String lname,String lsubname,String image){
   return Container(
     height: size.height*0.16,
     width: size.width*0.45,

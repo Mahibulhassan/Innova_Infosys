@@ -106,9 +106,9 @@ class _HomePageState extends State<HomePage> {
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                     children: [
-                                      TopOrderView(Icons.water_drop,"97 %","Humadit"),
-                                      TopOrderView(Icons.remove_red_eye,"7 Km","Visibility"),
-                                      TopOrderView(Icons.wind_power_outlined,"3 km/h","NE Wind")
+                                      HomeTopView(Icons.water_drop,"97 %","Humadit"),
+                                      HomeTopView(Icons.remove_red_eye,"7 Km","Visibility"),
+                                      HomeTopView(Icons.wind_power_outlined,"3 km/h","NE Wind")
                                     ],
                                   )
                                 ],
@@ -153,8 +153,8 @@ class _HomePageState extends State<HomePage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              MiddleOrderView(size,"19 C","Living Room","5 Device","assets/sufa.png"),
-                              MiddleOrderView(size,"12 C","BedRoom","8 Device","assets/sufa.png")
+                              HomeMiddleView(size,"19 C","Living Room","5 Device","assets/sufa.png"),
+                              HomeMiddleView(size,"12 C","BedRoom","8 Device","assets/sufa.png")
                             ],
                           ),
                           SizedBox(height: 5,),
@@ -178,8 +178,8 @@ class _HomePageState extends State<HomePage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              LowerOrderView(size,"Temparature","19 C","Ac","Living Room","assets/ac.png"),
-                              LowerOrderView(size,"Colour","White","Lamp","Dining Room","assets/ac.png"),
+                              HomeLowerView(size,"Temparature","19 C","Ac","Living Room","assets/ac.png"),
+                              HomeLowerView(size,"Colour","White","Lamp","Dining Room","assets/ac.png"),
                             ],
                           ),
                         ],
