@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_home_management/uility/BaseApp.dart';
 import 'package:smart_home_management/widgets/LampPageWidgets/AllWidgets.dart';
 
 import '../uility/AppColors.dart';
@@ -43,15 +44,15 @@ class _LampPageState extends State<LampPage> {
                               Row(children: [
                                 Row(
                                   children: [
-                                    Text("<",style: TextStyle(color: Colors.white,fontSize: 30),),
+                                    showText("<", 30, Colors.white),
                                     SizedBox(width: 5,),
-                                    Text("Back",style: TextStyle(color: Colors.white,fontSize: 14),),
+                                    showText("Back", 14, Colors.white),
                                   ],
                                 ),
                                 SizedBox(width: size.width*0.25,),
-                                Text("Lamp",style: TextStyle(color: Colors.white,fontSize: 30),),
+                                showText("Lamp", 30, Colors.white),
                               ],),
-                              Text("Dining Room",style: TextStyle(color: Colors.white,fontSize: 14),),
+                              showText("Dining Room", 14, Colors.white),
                               Container(
                                 width: size.width*0.15,
                                 child: Image(
@@ -59,14 +60,13 @@ class _LampPageState extends State<LampPage> {
                               ),
                               Container(
                                 width: size.width*0.30,
-                                child: Text("80 %",style: TextStyle(color: Colors.white,fontSize: 50),),
+                                child: showText("80 %", 50, Colors.white),
                               ),
-                              Text("Brightness",style: TextStyle(color: Colors.white,fontSize: 20),),
+                              showText("Brightness", 20, Colors.white),
                               SizedBox(height: 5,),
-                              Text("Insensity",style: TextStyle(color: Colors.white,fontSize: 15),),
+                              showText("Insensity", 15, Colors.white),
                               SizedBox(height: 5,),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Container(
                                     height: 50,
@@ -75,6 +75,13 @@ class _LampPageState extends State<LampPage> {
                                       child: Icon(
                                           Icons.lightbulb),
                                     ),
+                                  ),
+                                  Container(
+                                    height: size.height*0.05,
+                                    width: size.width*0.70,
+                                    child: Slider(value: 0.7,onChanged: (value){},thumbColor: Colors.purple,
+                                    activeColor: Colors.white,
+                                    inactiveColor: Colors.white,),
                                   ),
                                   Container(
                                     height: 50,
@@ -115,37 +122,41 @@ class _LampPageState extends State<LampPage> {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                children: [
-                                  Text("Schdule",style: TextStyle(fontSize: 20,color: Colors.black),),
-                                  SizedBox(width: 5,),
-                                  Container(
-                                    height: 20,
-                                    width: 20,
-                                    color: AppColors.main_colour,
-                                    child: Center(child: Text("3",style: TextStyle(fontSize: 20,color: Colors.white),)),
-                                  )
-                                ],
-                              ),
-                              Container(
-                                height: 40,
-                                width: 40,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    showText("Schdule", 20, Colors.black),
+                                    SizedBox(width: 5,),
+                                    Container(
+                                      height: 20,
+                                      width: 20,
+                                      color: AppColors.main_colour,
+                                      child: Center(child:showText("3", 20, Colors.white)),
+                                    )
+                                  ],
                                 ),
-                                child: Center(child: Text("+",style: TextStyle(fontSize: 30,),)),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 5,),
-                          LowerOrderView(size, "Smart Lamp", "Dining Room || Tue Thu", "assets/switch.png", "8 PM", "8 AM")
-                        ],
+                                Container(
+                                  height: 40,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                                  ),
+                                  child: Center(child: Text("+",style: TextStyle(fontSize: 30,),)),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 5,),
+                            LowerOrderView(size, "Smart Lamp", "Dining Room || Tue Thu", "assets/switch.png", "8 PM", "8 AM"),
+                            SizedBox(height: 5,),
+                            LowerOrderView(size, "Smart Lamp", "Dining Room || Tue Thu", "assets/switch.png", "8 PM", "8 AM"),
+                          ],
+                        ),
                       ),
                     ),
                   ),

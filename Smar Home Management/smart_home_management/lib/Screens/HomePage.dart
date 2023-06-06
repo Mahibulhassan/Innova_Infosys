@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_home_management/uility/AppColors.dart';
+import 'package:smart_home_management/uility/BaseApp.dart';
 import '../widgets/HomePageWidgets/Allwidgets.dart';
 
 class HomePage extends StatefulWidget {
@@ -47,7 +48,7 @@ class _HomePageState extends State<HomePage> {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text("Good Morning,",style: TextStyle(fontSize: 30,color: Colors.white),),
+                                  showText("Good Morning,", 30, Colors.white),
                                   Text("Kimberly Masterangelo",),
                                 ],
                               ),
@@ -90,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
                                           Text("May 16,2023 10:5 am"),
-                                          Text("Cloudy",style: TextStyle(fontSize: 20,color: Colors.black),),
+                                          showText("Cloudy", 20, Colors.black),
                                           Text("Jakarta, Indonesia")
                                         ],
                                       ),
@@ -145,8 +146,8 @@ class _HomePageState extends State<HomePage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                            Text("Rooms",style: TextStyle(fontSize: 20,color: Colors.black),),
-                            Text("See All",style: TextStyle(fontSize: 20,color: Colors.blueAccent),)
+                            showText("Rooms", 20, Colors.black),
+                            showText("See All", 20, Colors.blueAccent),
                           ],),
                           SizedBox(height: 5,),
                           Row(
@@ -162,7 +163,7 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               Row(
                                 children: [
-                                  Text("Active",style: TextStyle(fontSize: 20,color: Colors.black),),
+                                  showText("Active", 20, Colors.black),
                                   SizedBox(width: 5,),
                                   Container(
                                     height: 20,
@@ -172,7 +173,7 @@ class _HomePageState extends State<HomePage> {
                                   )
                                 ],
                               ),
-                              Text("See All",style: TextStyle(fontSize: 20,color: Colors.blueAccent),)
+                              showText("See All", 20, Colors.blueAccent)
                             ],),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
