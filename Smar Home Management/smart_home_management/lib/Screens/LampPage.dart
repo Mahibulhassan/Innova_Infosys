@@ -52,19 +52,35 @@ class _LampPageState extends State<LampPage> {
                                 SizedBox(width: size.width*0.25,),
                                 showText("Lamp", 30, Colors.white),
                               ],),
-                              showText("Dining Room", 14, Colors.white),
-                              Container(
-                                width: size.width*0.15,
-                                child: Image(
-                                    image: AssetImage("assets/switch.png")),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    showText("Dining Room", 14, Colors.white),
+                                    Container(
+                                      width: size.width*0.15,
+                                      child: Image(
+                                          image: AssetImage("assets/switch.png")),
+                                    ),
+                                    Container(
+                                      width: size.width*0.30,
+                                      child: showText("80 %", 50, Colors.white),
+                                    ),
+                                    showText("Brightness", 20, Colors.white),
+                                    SizedBox(height: 5,),
+                                    showText("Insensity", 15, Colors.white),
+                                  ],
+                                ),
+                                  Container(
+                                    height: size.height*0.15,
+                                    width: size.width*0.40,
+                                    child: Image(image: AssetImage("assets/lamp.png"),),
+                                    margin: EdgeInsets.only(right: 40),
+                                  )
+                                ],
                               ),
-                              Container(
-                                width: size.width*0.30,
-                                child: showText("80 %", 50, Colors.white),
-                              ),
-                              showText("Brightness", 20, Colors.white),
-                              SizedBox(height: 5,),
-                              showText("Insensity", 15, Colors.white),
                               SizedBox(height: 5,),
                               Row(
                                 children: [
@@ -73,7 +89,7 @@ class _LampPageState extends State<LampPage> {
                                     width: 50,
                                     child: FittedBox(
                                       child: Icon(
-                                          Icons.lightbulb),
+                                          Icons.lightbulb,color: Colors.black,),
                                     ),
                                   ),
                                   Container(
@@ -88,7 +104,7 @@ class _LampPageState extends State<LampPage> {
                                     width: 50,
                                     child: FittedBox(
                                       child: Icon(
-                                          Icons.light_mode),
+                                          Icons.light_mode,color: Colors.white70,),
                                     ),
                                   ),
                                 ],
