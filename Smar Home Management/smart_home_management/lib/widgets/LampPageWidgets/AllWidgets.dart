@@ -42,7 +42,7 @@ Widget LampLowerView(var size,String heading,String subtext, String icon,String 
 
   return Container(
     width: size.width,
-    height: size.height*0.16,
+    height: size.height*0.148,
     decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(20))
