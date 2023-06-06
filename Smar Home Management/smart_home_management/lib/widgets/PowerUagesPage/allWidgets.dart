@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../uility/AppColors.dart';
 import '../../uility/BaseApp.dart';
 
+
 Widget PowerUseLowerView (Size size,String data1,String data2,String data3,String data4,String data5,var icon,var color){
 
   return Container(
@@ -38,7 +39,7 @@ Widget PowerUseLowerView (Size size,String data1,String data2,String data3,Strin
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 24,right: 2),
+          padding: const EdgeInsets.only(top: 24,right: 7),
           child: Column(
             children: [
               showText(data4, 18, Colors.blueAccent),

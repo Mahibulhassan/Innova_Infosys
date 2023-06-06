@@ -39,7 +39,6 @@ Widget LampMiddleView(){
 }
 
 Widget LampLowerView(var size,String heading,String subtext, String icon,String stime,String etime){
-
   return Container(
     width: size.width,
     height: size.height*0.148,

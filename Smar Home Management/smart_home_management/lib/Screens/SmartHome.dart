@@ -109,11 +109,11 @@ class _SmartHomeState extends State<SmartHome> {
                       SizedBox(height: 5,),
                       LampLowerView(size, "Smart Lamp", "Dining Room || Tue Thus", "assets/switch.png","8 Pm", "8 Am"),
                       SizedBox(height: 5,),
-                      LampLowerView(size, "Smart Lamp", "Dining Room || Tue Thus", "assets/switch.png","8 Pm", "8 Am"),
+                      LampLowerView(size, "Air Condition", "Bead Room || Sun", "assets/switch.png","10 Pm", "11 Am"),
                       SizedBox(height: 5,),
-                      LampLowerView(size, "Smart Lamp", "Dining Room || Tue Thus", "assets/switch.png","8 Pm", "8 Am"),
+                      LampLowerView(size, "Smart Lamp", "Bead Room 2 || Fri", "assets/switch.png","8 Pm", "8 Am"),
                       SizedBox(height: 5,),
-                      LampLowerView(size, "Smart Lamp", "Dining Room || Tue Thus", "assets/switch.png","8 Pm", "8 Am"),
+                      LampLowerView(size, "Television", "Living  Room || Tue Thus", "assets/switch.png","7 Pm", "10 Pm"),
                     ],),
                   ),
                 ),
@@ -124,6 +124,7 @@ class _SmartHomeState extends State<SmartHome> {
       ],
     );
   }
+
 
   Widget customDropdownMenu(){
     return Container(

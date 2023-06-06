@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home_management/uility/BaseApp.dart';
 import 'package:smart_home_management/widgets/LampPageWidgets/AllWidgets.dart';
-
 import '../uility/AppColors.dart';
 
 class LampPage extends StatefulWidget {
@@ -10,6 +9,11 @@ class LampPage extends StatefulWidget {
 }
 
 class _LampPageState extends State<LampPage> {
+
+  //Varable Par
+  double _sliderValue =0.7;
+
+  //Code Section
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -95,7 +99,11 @@ class _LampPageState extends State<LampPage> {
                                   Container(
                                     height: size.height*0.05,
                                     width: size.width*0.70,
-                                    child: Slider(value: 0.7,onChanged: (value){},thumbColor: Colors.purple,
+                                    child: Slider(value: _sliderValue,onChanged: (value){
+                                      setState(() {
+                                        _sliderValue=value;
+                                      });
+                                    },thumbColor: Colors.purple,
                                     activeColor: Colors.white,
                                     inactiveColor: Colors.white,),
                                   ),

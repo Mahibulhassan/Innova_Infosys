@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../uility/AppColors.dart';
 
 Widget HomeTopView(var icon ,String data, String name){
@@ -18,6 +17,7 @@ Widget HomeTopView(var icon ,String data, String name){
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
+                margin: EdgeInsets.only(left: 2),
                 height: 30,
                 width: 30,
                 decoration: BoxDecoration(
