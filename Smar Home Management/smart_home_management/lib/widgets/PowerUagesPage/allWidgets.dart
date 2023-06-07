@@ -19,8 +19,8 @@ Widget PowerUseLowerView (Size size,String data1,String data2,String data3,Strin
       children: [
         Container(
           margin: EdgeInsets.only(left: 10),
-          height: 70,
-          width: 70,
+          height: size.height*0.08,
+          width: size.width*0.17,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(50)),

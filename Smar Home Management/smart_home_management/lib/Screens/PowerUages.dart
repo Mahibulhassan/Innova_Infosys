@@ -24,119 +24,108 @@ class _PowerUagesState extends State<PowerUages> {
         .size;
     return Stack(
       children: [
-        Stack(
+        Column(
           children: [
             Container(
-              height: size.height / 2.3,
-              width: size.width,
               decoration: BoxDecoration(
                 color: Colors.white,
               ),
-            ),
-            Container(
-              height: size.height / 2.3,
-              width: size.width,
-              decoration: BoxDecoration(
-                color: AppColors.main_colour,
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(50)),
-              ),
-              child: SafeArea(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          showText("Power Usage", 20, Colors.white),
-                          Container(
-                            height: 40,
-                            width: 40,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.all(
-                                  Radius.circular(50)),
-                            ),
-                            child: Icon(Icons.menu_outlined),
-                          )
-                        ],
-                      ),
-                      SizedBox(height: 20,),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          showText("Use This Week", 14, Colors.white70),
-                          showText("2500 Watt", 14, Colors.white70),
-                        ],
-                      ),
-                      SizedBox(height: 5,),
-                      customGraphWidget(size),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
               child: Container(
-                width: size.width,
-                height: size.height / 2.19,
+                height:size.height*0.48 ,
                 decoration: BoxDecoration(
-                    color: AppColors.main_colour
+                  color: AppColors.main_colour,
+                  borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50)),
                 ),
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                width: size.width,
-                height: size.height / 2.19,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(50)),
-                ),
-                child: SingleChildScrollView(
+                child: SafeArea(
                   child: Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Row(
-                              children: [
-                                showText("Total Today", 20, Colors.black),
-                                Container(
-                                  margin: EdgeInsets.only(left: 10),
-                                  height: 30,
-                                  width: 30,
-                                  decoration:BoxDecoration(
-                                    color: AppColors.main_colour,
-                                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                                  ),
-                                  child: Center(child: showText("4", 20, Colors.white)),
-                                )
-                              ],
-                            ),
-                            showText("See All", 18, AppColors.main_colour),
+                            showText("Power Usage", 20, Colors.white),
+                            Container(
+                              height: 40,
+                              width: 40,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.all(
+                                    Radius.circular(50)),
+                              ),
+                              child: Icon(Icons.menu_outlined),
+                            )
+                          ],
+                        ),
+                        SizedBox(height: 20,),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            showText("Use This Week", 14, Colors.white70),
+                            showText("2500 Watt", 14, Colors.white70),
                           ],
                         ),
                         SizedBox(height: 5,),
-                        PowerUseLowerView(size, "LAMP", "kitchen - Beadroom","8 Unit | 8 Jan", "1000 kh/h","-11.2 %",Icons.lightbulb,Colors.red),
-                        SizedBox(height: 5,),
-                        PowerUseLowerView(size, "Air Condition", "kitchen - living Room","8 Unit | 12 Jan", "1000 kh/h","-10.2 %",Icons.air_rounded,Colors.green),
-                        SizedBox(height: 5,),
-                        PowerUseLowerView(size, "Wireless Spiker", "living Room","2 Unit | 3 Jan", "1090 kh/h","-10.2 %",Icons.surround_sound,Colors.green),
+                        customGraphWidget(size),
                       ],
                     ),
                   ),
                 ),
               ),
             ),
+            Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: AppColors.main_colour,
+                  borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50)),
+                ),
+                child: Container(
+                  height:size.height*0.49 ,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(topRight: Radius.circular(50)),
+                  ),
+                  child: SingleChildScrollView(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  showText("Total Today", 20, Colors.black),
+                                  Container(
+                                    margin: EdgeInsets.only(left: 10),
+                                    height: 30,
+                                    width: 30,
+                                    decoration:BoxDecoration(
+                                      color: AppColors.main_colour,
+                                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                                    ),
+                                    child: Center(child: showText("4", 20, Colors.white)),
+                                  )
+                                ],
+                              ),
+                              showText("See All", 18, AppColors.main_colour),
+                            ],
+                          ),
+                          SizedBox(height: 5,),
+                          PowerUseLowerView(size, "LAMP", "kitchen - Beadroom","8 Unit | 8 Jan", "1000 kh/h","-11.2 %",Icons.lightbulb,Colors.red),
+                          SizedBox(height: 5,),
+                          PowerUseLowerView(size, "Air Condition", "kitchen - living Room","8 Unit | 12 Jan", "1000 kh/h","-10.2 %",Icons.air_rounded,Colors.green),
+                          SizedBox(height: 5,),
+                          PowerUseLowerView(size, "Wireless Spiker", "living Room","2 Unit | 3 Jan", "1090 kh/h","-10.2 %",Icons.surround_sound,Colors.green),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
-        )
+        ),
       ],
     );
   }
@@ -145,10 +134,10 @@ class _PowerUagesState extends State<PowerUages> {
   //Here Implement Graph Code.......
   Widget customGraphWidget(Size size) {
     return Container(
-      height: size.height * 0.28,
+      height: size.height * 0.29,
       width: size.width,
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(8.0),
         child: LineChart(
           LineChartData(
               borderData: FlBorderData(
