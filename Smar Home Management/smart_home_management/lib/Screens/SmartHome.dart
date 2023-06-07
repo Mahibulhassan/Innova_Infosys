@@ -26,101 +26,92 @@ class _SmartHomeState extends State<SmartHome> {
     Size size =MediaQuery.of(context).size;
     return Stack(
       children: [
-        Stack(
+        Column(
           children: [
             Container(
-              height: size.height/4.5,
-              width: size.width,
               decoration: BoxDecoration(
                 color: AppColors.shasow_bluw,
               ),
-            ),
-            Container(
-              height: size.height/4.5,
-              width: size.width,
+              child: Container(
+                height:size.height*0.252 ,
                 decoration: BoxDecoration(
                   color: AppColors.main_colour,
                   borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50)),
                 ),
-              child: SafeArea(
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          showText("Power Usage", 20, Colors.white),
-                          Container(
-                            height: 40,
-                            width: 40,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.all(
-                                  Radius.circular(50)),
-                            ),
-                            child: Icon(Icons.menu_outlined),
-                          )
-                        ],
-                      ),
-                      customDropdownMenu(),
-                    ],
+                child: SafeArea(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            showText("Smart Home", 20, Colors.white),
+                            Container(
+                              height: size.height*0.05,
+                              width: size.width*0.08,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.all(
+                                    Radius.circular(50)),
+                              ),
+                              child: Icon(Icons.menu_outlined),
+                            )
+                          ],
+                        ),
+                        customDropdownMenu(),
+                      ],
+                    ),
                   ),
                 ),
               ),
-
             ),
-            Align(
-              alignment: Alignment.bottomCenter,
+            Expanded(
               child: Container(
-                width: size.width,
-                height: size.height/ 1.49,
                 decoration: BoxDecoration(
-                    color: AppColors.main_colour
+                  color: AppColors.main_colour,
+                  borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50)),
                 ),
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                width: size.width,
-                height: size.height/ 1.49,
+                child: Container(
+                  height:size.height*0.49 ,
                   decoration: BoxDecoration(
                     color: AppColors.shasow_bluw,
                     borderRadius: BorderRadius.only(topRight: Radius.circular(50)),
                   ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SingleChildScrollView(
-                    child: Column(children: [
-                      Row(children: [
-                        showText("Smart Mode", 20, Colors.black),
-                        Container(
-                          margin: EdgeInsets.only(left: 10),
-                          height: 30,
-                          width: 30,
-                          decoration:BoxDecoration(
-                            color: AppColors.main_colour,
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SingleChildScrollView(
+                      child: Column(children: [
+                        Row(children: [
+                          showText("Smart Mode", 20, Colors.black),
+                          Container(
+                            margin: EdgeInsets.only(left: 10),
+                            height: 30,
+                            width: 30,
+                            decoration:BoxDecoration(
+                              color: AppColors.main_colour,
+                              borderRadius: BorderRadius.all(Radius.circular(10)),
+                            ),
+                            child: Center(child: showText("4", 20, Colors.white)),
                           ),
-                          child: Center(child: showText("4", 20, Colors.white)),
-                        ),
+                        ],),
+                        SizedBox(height: 5,),
+                        LampLowerView(size, "Smart Lamp", "Dining Room || Tue Thus", "assets/switch.png","8 Pm", "8 Am"),
+                        SizedBox(height: 5,),
+                        LampLowerView(size, "Air Condition", "Bead Room || Sun", "assets/switch.png","10 Pm", "11 Am"),
+                        SizedBox(height: 5,),
+                        LampLowerView(size, "Smart Lamp", "Bead Room 2 || Fri", "assets/switch.png","8 Pm", "8 Am"),
+                        SizedBox(height: 5,),
+                        LampLowerView(size, "Television", "Living  Room || Tue Thus", "assets/switch.png","7 Pm", "10 Pm"),
                       ],),
-                      SizedBox(height: 5,),
-                      LampLowerView(size, "Smart Lamp", "Dining Room || Tue Thus", "assets/switch.png","8 Pm", "8 Am"),
-                      SizedBox(height: 5,),
-                      LampLowerView(size, "Air Condition", "Bead Room || Sun", "assets/switch.png","10 Pm", "11 Am"),
-                      SizedBox(height: 5,),
-                      LampLowerView(size, "Smart Lamp", "Bead Room 2 || Fri", "assets/switch.png","8 Pm", "8 Am"),
-                      SizedBox(height: 5,),
-                      LampLowerView(size, "Television", "Living  Room || Tue Thus", "assets/switch.png","7 Pm", "10 Pm"),
-                    ],),
+                    ),
                   ),
                 ),
               ),
             ),
           ],
-        )
+        ),
+
       ],
     );
   }
